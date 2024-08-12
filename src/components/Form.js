@@ -36,7 +36,7 @@ function Form() {
           <input
             required
             name="title"
-            className="py-2 mb-3 border border-black px-3 mx-auto focus:border-none rounded-[25px] w-full max-w-[350px]"
+            className="py-2 mb-3 border hover:bg-blue-200  border-black px-3 mx-auto focus:border-none rounded-[25px] w-full max-w-[350px]"
             type="text"
             id="title"
           />
@@ -48,7 +48,7 @@ function Form() {
           <input
             required
             name="author"
-            className="py-2 mb-3 border border-black px-3 mx-auto focus:border-none rounded-[25px] w-full max-w-[350px]"
+            className="py-2 hover:bg-blue-200 mb-3 border border-black px-3 mx-auto focus:border-none rounded-[25px] w-full max-w-[350px]"
             type="text"
             id="author"
           />
@@ -60,13 +60,13 @@ function Form() {
           <input
             required
             name="photoURL"
-            className="py-2 mb-3 border border-black px-3 mx-auto focus:border-none rounded-[25px] w-full max-w-[350px]"
+            className="py-2 hover:bg-blue-200 mb-3 border border-black px-3 mx-auto focus:border-none rounded-[25px] w-full max-w-[350px]"
             type="url"
             id="URL"
           />
         </div>
         <div>
-          <button className="mt-5 active:bg-black active:text-white py-2 px-10 rounded-3xl text-white font-semibold bg-black bg-opacity-35">
+          <button className="mt-5 hover:bg-blue-300 active:bg-black active:text-white py-2 px-10 rounded-3xl text-white font-semibold bg-black bg-opacity-35">
             Creat a New Book
           </button>
         </div>
