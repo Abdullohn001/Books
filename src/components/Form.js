@@ -1,25 +1,34 @@
 "use client";
 
-
 function Form() {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const title = formData.get("title");
     const author = formData.get("author");
     const photoURL = formData.get("photoURL");
     const url =
-      "https://online-json-server-api.up.railway.app/project/66b5ec4a340dd55056fb6a0a/books";
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ title, author, photoURL }),
-    }).then(() => {
+      "https://online-json-server-api.up.railway.app/project/66b5ec4a340dd55056fb6a0a/books/";
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ title, author, photoURL }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server javobi xato: ${response.status}`);
+      }
+
       window.location.reload();
       e.target.reset();
-    });
+    } catch (error) {
+      console.error("Fetch so'rovi bajarilmadi:", error);
+      alert("Xatolik yuz berdi, iltimos keyinroq qayta urinib ko'ring.");
+    }
   };
 
   return (
@@ -66,7 +75,7 @@ function Form() {
         </div>
         <div>
           <button className="mt-5 hover:bg-blue-300 active:bg-black active:text-white py-2 px-10 rounded-3xl text-white font-semibold bg-black bg-opacity-35">
-            Creat a New Book
+            Create a New Book
           </button>
         </div>
       </form>

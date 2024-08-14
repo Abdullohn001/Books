@@ -16,7 +16,7 @@ const handleDelete = (id) => {
 function ShowBooks({ books }) {
   return (
     <div className="w-full flex flex-wrap container mt-16 mx-auto justify-center gap-4 pb-10">
-      {books.data.map((book) => {
+      {books.map((book) => {
         return (
           <div key={book.id} className="p-2">
             <div className="card border h-[530px] w-72 p-4 shadow-xl">
