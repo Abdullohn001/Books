@@ -1,15 +1,11 @@
 "use client";
-import { useState } from "react";
-import { CiEdit } from "react-icons/ci";
 
 const handleDelete = (id) => {
   const url = `https://online-json-server-api.up.railway.app/project/66b5ec4a340dd55056fb6a0a/books/${id}`;
-
   fetch(url, {
     method: "DELETE",
   })
     .then(() => {
-      alert("Book deleted successfully!");
       window.location.reload();
     })
     .catch((error) => {
@@ -18,8 +14,6 @@ const handleDelete = (id) => {
 };
 
 function ShowBooks({ books }) {
-  const [editingBook, setEditingBook] = useState(null);
-
   return (
     <div className="w-full flex flex-wrap container mt-16 mx-auto justify-center gap-4 pb-10">
       {books.data.map((book) => {

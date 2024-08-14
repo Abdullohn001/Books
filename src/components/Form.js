@@ -17,7 +17,6 @@ function Form() {
       },
       body: JSON.stringify({ title, author, photoURL }),
     }).then(() => {
-      alert("Success!");
       window.location.reload();
       e.target.reset();
     });
